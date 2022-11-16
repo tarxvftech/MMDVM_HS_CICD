@@ -1,0 +1,15 @@
+name: 'Builder'
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: Build all in configs/
+    runs-on: ubuntu:22.04
+    steps:
+      - name: Install build tools
+        run: apt update && apt install libnewlib-arm-none-eabi binutils-arm-none-eabi gcc-arm-none-eabi
+      - name: ls
+        run: ls -latr && pwd
+
