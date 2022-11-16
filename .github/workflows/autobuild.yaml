@@ -9,8 +9,9 @@ jobs:
     name: Build all in configs/
     runs-on: ubuntu-latest
     steps:
-      - name: Install build tools
-        run: apt update && apt install libnewlib-arm-none-eabi binutils-arm-none-eabi gcc-arm-none-eabi
-      - name: ls
-        run: ls -latr && pwd
+      - uses: carlosperate/arm-none-eabi-gcc-action@v1
+        with:
+          release: 11.2-2022.02
+      - run: arm-none-eabi-gcc --version
+      - run: ls -latr && pwd
 
