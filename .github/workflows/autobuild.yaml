@@ -12,6 +12,7 @@ jobs:
       - uses: carlosperate/arm-none-eabi-gcc-action@v1
         with:
           release: 11.2-2022.02
+      - uses: actions/checkout@v2
       - run: arm-none-eabi-gcc --version
       - run: ls -latr && pwd
 
