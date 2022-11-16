@@ -1,3 +1,4 @@
+mkdir -p ./out/
 for each in $(ls configs/*.h); do
 	echo "starting $each";
 	cp $each ./Config.h
@@ -5,8 +6,7 @@ for each in $(ls configs/*.h); do
 	make hs
 	board="$(basename "$each")"
 	board="${board%.*}"
-	mkdir -p /out/$board/
 	echo $board
-	cp bin/* /out/$board/
+	mv bin ./out/$board
 done
 
