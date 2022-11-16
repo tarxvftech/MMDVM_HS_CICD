@@ -15,4 +15,6 @@ jobs:
       - uses: actions/checkout@v2
       - run: arm-none-eabi-gcc --version
       - run: ls -latr && pwd
+      - run: git submodule init && git submodule update
+      - run: bash buildall.sh
 
