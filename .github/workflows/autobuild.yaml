@@ -18,7 +18,7 @@ jobs:
       - run: ls -latr && pwd
       - run: git submodule init && git submodule update
       - run: bash buildall.sh
-      - name: Archive production artifacts
+      - name: Save built hotspot images
         uses: actions/upload-artifact@v3
         with:
           name: all built images (no elf)
